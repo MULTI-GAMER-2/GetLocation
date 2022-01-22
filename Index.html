@@ -17,15 +17,16 @@
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(initMap);
-  } else { 
+ var longitude = geolocationCoordinatesInstance.longitude;
+var latitude = geolocationCoordinatesInstance.latitude;
+
+ } else { 
   
   alert("Please allow your location")
  return getLocation();
   }
 }
 
-var longitude = geolocationCoordinatesInstance.longitude;
-var latitude = geolocationCoordinatesInstance.latitude;
 
 var map;
       function initMap() {   
