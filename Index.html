@@ -29,7 +29,7 @@ var map;
       function initMap() {   
         const place = {lat: position.coords.latitude,lng:position.coords.longitude}
         map = new google.maps.Map(document.getElementById('map'), {
-          center: place,
+          center: place.value,
           zoom: 1000,
           mapTypeId: "terrain",
         });
