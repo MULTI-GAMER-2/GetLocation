@@ -17,8 +17,7 @@
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(initMap);
- var longitude = geolocationCoordinatesInstance.longitude;
-var latitude = geolocationCoordinatesInstance.latitude;
+
 
  } else { 
   
@@ -33,7 +32,8 @@ var map;
 
 
 
-        const place = {lat: latitude,lng: longitude}
+        const place = {lat: 
+geolocationCoordinatesInstance.latitude,lng: geolocationCoordinatesInstance.longitude}
         map = new google.maps.Map(document.getElementById('map'), {
           center: place.value,
           zoom: 1000,
