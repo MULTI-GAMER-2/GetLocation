@@ -27,7 +27,12 @@ function getLocation() {
 
 var map;
       function initMap() {   
-        const place = {lat: position.coords.latitude,lng:position.coords.longitude}
+
+var longitude = geolocationCoordinatesInstance.longitude;
+var latitude = geolocationCoordinatesInstance.latitude;
+
+
+        const place = {lat: latitude,lng: longitude}
         map = new google.maps.Map(document.getElementById('map'), {
           center: place.value,
           zoom: 1000,
