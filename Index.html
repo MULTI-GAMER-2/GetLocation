@@ -27,7 +27,7 @@ function getLocation() {
 
 var map;
       function initMap() {   
-        const place = {lat: navigator.geolocation.coords.latitude,lng:navigator.geolocation.coords.longitude}
+        const place = {lat: position.coords.latitude,lng:position.coords.longitude}
         map = new google.maps.Map(document.getElementById('map'), {
           center: place,
           zoom: 1000,
