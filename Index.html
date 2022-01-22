@@ -22,7 +22,7 @@ function getLocation() {
 position.coords.latitude,lng: position.coords.longitude}
         map = new google.maps.Map(document.getElementById('map'), {
           center: place.value,
-          zoom: 1000,
+          zoom: 100,
           mapTypeId: "terrain",
         });
         map.setTilt(45);
@@ -50,12 +50,6 @@ position.coords.latitude,lng: position.coords.longitude}
   }
 )();
 
- } else { 
-  
-  alert("Please allow your location")
- return getLocation();
-  }
-}
 
 
 
