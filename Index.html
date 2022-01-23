@@ -2,8 +2,6 @@
 <html>
 <body>
 
-<button onclick="OnClickEvt()">Try</button>
-
 <p id="demo"></p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -20,12 +18,18 @@ function getLocation() {
 
 function showPosition(position) {
  
-demo.innerHTML = '<button id=>https://maps.google.com/?q="+"@"+position.coords.latitude+","+position.coords.longitude'
+demo.innerHTML = '<button id="coordsBtn" onclick="GetCoords();">https://maps.google.com/?q='+'@'+position.coords.latitude+','+position.coords.longitude'
  
 }
-function OnClickEvt(){
-setInterval(getLocation, 10000)
+
+function GetCoords(){
+
+window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+','+position.coords.longitude')
+
 }
+
+setInterval(showPosition, 10)
+
 </script>
 <style>
 				
