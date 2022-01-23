@@ -20,7 +20,7 @@ function getLocation() {
 
 function showPosition(position) {
  
-window.open("https://maps.google.com/?q="+"@"+position.coords.latitude+","+position.coords.longitude)
+result.innerHTML = "<button onclick=' window.open("https://maps.google.com/?q="+"@"+position.coords.latitude+","+position.coords.longitude")'>Get</button>
  
 }
 
