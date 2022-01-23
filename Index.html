@@ -21,14 +21,14 @@ function getLocation() {
 function showPosition(position) {
  
 result.innerHTML = '<button onclick="GetCoords()">Get</button>'
- 
-}
-
-function GetCoords(position){
+ function GetCoords(position){
 
 window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
  
 }
+}
+
+
 
 setInterval(getLocation, 1000)
 
