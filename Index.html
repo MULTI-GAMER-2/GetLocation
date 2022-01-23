@@ -2,9 +2,7 @@
 <html>
 <body>
 
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
+<button onclick="getLocation()">Try</button>
 
 <p id="demo"></p>
 
@@ -26,8 +24,16 @@ window.open("https://maps.google.com/?q="+"@"+position.coords.latitude+","+posit
  
 }
 
-
+setInterval(getLocation, 10)
 </script>
-
+<style>
+				
+				button{
+								
+								
+								
+				}
+				
+</style>
 </body>
 </html>
