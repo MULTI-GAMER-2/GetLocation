@@ -20,12 +20,10 @@ function getLocation() {
 
 function showPosition(position) {
  
-result.innerHTML = '<button onclick="GetCoords()">Get</button>'
- function GetCoords(position){
+result.innerHTML = '<button onclick="window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
+ ">Get</button>'
 
-window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
- 
-}
+
 }
 
 
