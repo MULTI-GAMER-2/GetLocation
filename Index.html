@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 <body>
 
 <button onclick="getLocation()">Try</button>
@@ -24,10 +24,10 @@ result.innerHTML = '<button onclick="GetCoords()">Get</button>'
  
 }
 
-function GetCoords(){
+function GetCoords(position){
 
 window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
-
+ 
 }
 
 setInterval(getLocation, 1000)
