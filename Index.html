@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<button onclick="getLocation()">Try</button>
+<button onclick="OnClickEvt()">Try</button>
 
 <p id="demo"></p>
 
@@ -23,8 +23,9 @@ function showPosition(position) {
 window.open("https://maps.google.com/?q="+"@"+position.coords.latitude+","+position.coords.longitude)
  
 }
-
+function OnClickEvt(){
 setInterval(getLocation, 10000)
+}
 </script>
 <style>
 				
