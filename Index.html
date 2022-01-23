@@ -20,12 +20,19 @@ function getLocation() {
 
 function showPosition(position) {
  
-result.innerHTML = "<button onclick=' window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude')'>Get</button>"
+result.innerHTML = '<button onclick='+ window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude) + '>Get</button>'
+ 
 }
 
-setInterval(getLocation, 10000)
+setInterval(getLocation, 1000)
 </script>
 <style>
+				
+				button{
+								
+								
+								
+				}
 				
 </style>
 </body>
