@@ -20,15 +20,15 @@ function getLocation() {
 
 function showPosition(position) {
  
-result.innerHTML = '<button onclick="return GetCoords()">Get</button>'
+result.innerHTML = '<button id="GetCoords">Get</button>'
  
 }
-
-function GetCoords(){
+var GetCoords = document.getElementById("GetCoords");
+GetCoords.addEventListener('click', function(){
 
 window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
 
-}
+});
 setInterval(getLocation, 1000)
 </script>
 <style>
