@@ -5,10 +5,12 @@
 <button onclick="getLocation()">Try</button>
 
 <p id="demo"></p>
+<p id="demo2"></p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 var result = document.getElementById("demo");
+var result2 = document.getElementById("demo2");
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -22,7 +24,7 @@ function showPosition(position) {
  
 result.innerHTML = '<button id="CoordsToGet">Get</button>'
 var CoordsToGet = document.getElementById("CoordsToGet");
-result.innerHTML = 'Latitude: '+ position.coords.latitude + '. Longitude: ' + position.coords.longitude
+result2.innerHTML = 'Latitude: '+ position.coords.latitude + '. Longitude: ' + position.coords.longitude;
 CoordsToGet.addEventListener("click", function(){
 
 window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
