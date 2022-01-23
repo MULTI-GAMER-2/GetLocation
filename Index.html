@@ -20,16 +20,27 @@ function getLocation() {
 
 function showPosition(position) {
  
-result.innerHTML = '<button id="GetCoords">Get</button>'
+result.innerHTML = '<button onclick="GetCoords()">Get</button>'
  
 }
-var GetCoords = document.getElementById("GetCoords");
-GetCoords.addEventListener('click', function(){
+
+function GetCoords(){
 
 window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
 
-});
+}
+
 setInterval(getLocation, 1000)
+
+window.addEventListener("error", handleError, true);
+
+function handleError(evt) {
+    if (evt.message) { // Chrome sometimes provides this
+      alert("error: "+evt.message +" at linenumber: "+evt.lineno+" of file: "+evt.filename);
+    } else {
+      alert("error: "+evt.type+" from element: "+(evt.srcElement || evt.target));
+    }
+}
 </script>
 <style>
 				
