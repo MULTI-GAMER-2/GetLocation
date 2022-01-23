@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body onload="javascript:getLocation(position)">
+<body onload="javascript:getLocation()">
 
 <div id="demo"></div>
 
@@ -17,15 +17,11 @@ function getLocation() {
 
 function showPosition(position) {
  
-result.innerHTML = '<button id="coordsBtn" onclick="GetCoords()">Get</button>';
+result.innerHTML = "<button id='coordsBtn' onclick='window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+','+position.coords.longitude')
+'>Get</button>";
  
 }
 
-function GetCoords(){
-
-window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+','+position.coords.longitude')
-
-}
 
 setInterval(showPosition, 1000)
 
