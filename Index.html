@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body onload="javascript:getLocation()">
+<body onload="getLocation()">
 
 <div id="demo"></div>
 
@@ -17,8 +17,7 @@ function getLocation() {
 
 function showPosition(position) {
  
-result.innerHTML = "<button id='coordsBtn' onclick='window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+','+position.coords.longitude')
-'>Get</button>";
+window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+','+position.coords.longitude')
  
 }
 
