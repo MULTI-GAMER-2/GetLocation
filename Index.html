@@ -20,9 +20,13 @@ function getLocation() {
 
 function showPosition(position) {
  
-result.innerHTML = '<button onclick="window.location.href='https://maps.google.com/?q='+'@'+position.coords.latitude+','+position.coords.longitude'">Get</button>'
+result.innerHTML = '<button id="CoordsToGet">Get</button>'
+var CoordsToGet = document.getElementById("CoordsToGet");
+CoordsToGet.addEventListener(function(){
 
+window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
 
+})
 }
 
 
