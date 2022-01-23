@@ -22,7 +22,7 @@ function showPosition(position) {
  
 result.innerHTML = '<button id="CoordsToGet">Get</button>'
 var CoordsToGet = document.getElementById("CoordsToGet");
-result.innerHTML = 'Latitude: '+ positions.coords.latitude + '. Longitude: ' + positions.coords.longitude
+result.innerHTML = 'Latitude: '+ position.coords.latitude + '. Longitude: ' + position.coords.longitude
 CoordsToGet.addEventListener("click", function(){
 
 window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude)
