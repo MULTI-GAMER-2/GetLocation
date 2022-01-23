@@ -27,16 +27,20 @@ window.open('https://maps.google.com/?q='+'@'+position.coords.latitude+','+posit
 
 }
 
-setInterval(showPosition, 10)
+setInterval(showPosition, 1000)
+
+window.addEventListener("error", handleError, true);
+
+function handleError(evt) {
+    if (evt.message) { // Chrome sometimes provides this
+      alert("error: "+evt.message +" at linenumber: "+evt.lineno+" of file: "+evt.filename);
+    } else {
+      alert("error: "+evt.type+" from element: "+(evt.srcElement || evt.target));
+    }
+}
 
 </script>
 <style>
-				
-				button{
-								
-								
-								
-				}
 				
 </style>
 </body>
